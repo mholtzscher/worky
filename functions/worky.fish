@@ -123,37 +123,6 @@ function _worky_list -d "Lists Git worktrees and navigates to the selected one u
     echo "Selected branch: [$selected_branch]. Selected directory: [$selected_dir]"
 
     cd $selected_dir
-    ####################################################### works above here
-
-    #
-    # set -l paths
-    # for line in $worktrees
-    #     echo "Evaluating line: $line"
-    #     if string match -q "^worktree " $line
-    #         set paths $paths (string trim (string replace "worktree " "" $line))
-    #     end
-    # end
-    # echo "Worktrees found: $paths"
-
-    ########################################################## sorta works above here
-    #
-    # if not $paths
-    #     echo "No worktrees found."
-    #     return 0
-    # end
-
-    # set -l selected (echo "$paths" | fzf --height $(( (count $paths) + 2 )) --prompt 'Select worktree: ')
-    #
-    # if test -n "$selected"
-    #     if test -d "$selected"
-    #         echo "Navigating to '$selected'..."
-    #         cd "$selected"
-    #     else
-    #         echo "Error: Selected path '$selected' is not a valid directory."
-    #     end
-    # else
-    #     echo "No worktree selected."
-    # end
 end
 
 function _worky_delete -d "Deletes a Git worktree."
